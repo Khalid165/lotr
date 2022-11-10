@@ -1,0 +1,38 @@
+<div  class="movies-img" >
+
+    {%include 'header.html'%}
+    <div class="movies-list" >
+  {%for movie in all_movies[:4]%}
+    <div class="card text-bg-dark mb-3" style="max-width: 15rem;">
+  <div class="card-header">{{movie['name']}}</div>
+  <div class="card-body">
+    <p class="card-min">🕒 {{movie['runtimeInMinutes']}} mins</p>
+    {%if movie['academyAwardWins']>1%}
+    <p class="card-text">🏆 {{movie['academyAwardWins']}} awards</p>
+      {%else%}
+      <p class="card-text">🏆 {{movie['academyAwardWins']}} award</p>
+      {%endif%}
+      <p>🍅 {{movie['rottenTomatoesScore']}}%</p>
+  </div>
+</div>
+    {%endfor%}
+          {%for movie in all_movies[4:]%}
+    <div class="card text-bg-dark mb-3" style="max-width: 15rem;">
+  <div class="card-header">{{movie['name']}}</div>
+  <div class="card-body">
+    <p class="card-min">🕒 {{movie['runtimeInMinutes']}} mins</p>
+      {%if movie['academyAwardWins']>1%}
+    <p class="card-text">🏆 {{movie['academyAwardWins']}} awards</p>
+      {%else%}
+      <p class="card-text">🏆 {{movie['academyAwardWins']}} award</p>
+      {%endif%}
+      <p>🍅 {{movie['rottenTomatoesScore']}}%</p>
+  </div>
+</div>
+    {%endfor%}
+
+        </div>
+
+  </div>
+
+

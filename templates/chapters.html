@@ -1,0 +1,17 @@
+<div class="chap-img" style="background-color:#2C3333;" >
+{%include 'header.html'%}
+    <div style="text-align:center; padding:200px; ">
+        {%if book=="The Fellowship Of The Ring"%}
+          <img src="https://www.pngall.com/wp-content/uploads/12/Lord-Of-The-Rings-Logo.png" style="width:80%">
+          {%elif book=="The Two Towers"%}
+          <img src="https://www.scifimoviezone.com/imagefantasy/lotrlogo02.png" style="width:80%">
+          {%else%}
+          <img src="https://picfiles.alphacoders.com/638/63899.png" style="width:80%">
+          {%endif%}
+    <ol>
+        {%for chapter in chapters%}
+        <li class="" ><a href="#">{{chapter['chapterName']}}</a></li>
+        {%endfor%}
+    </ol>
+        </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="book-img">
+    {%include "header.html"%}
+    <div id="large-th">
+  <div class="alcontainer">
+    <br>
+    <div id="list-th">
+      {%for book in books%}
+      <div class="book read" style="width:25%;" >
+        <div class="cover" >
+          {%if book['name']=="The Fellowship Of The Ring"%}
+          <img src="https://upload.wikimedia.org/wikipedia/en/8/8e/The_Fellowship_of_the_Ring_cover.gif">
+          {%elif book['name']=="The Two Towers"%}
+          <img src="https://upload.wikimedia.org/wikipedia/en/a/a1/The_Two_Towers_cover.gif">
+          {%else%}
+          <img src="https://upload.wikimedia.org/wikipedia/en/1/11/The_Return_of_the_King_cover.gif">
+          {%endif%}
+
+
+        </div>
+        <div class="description">
+          <p class="title">{{book['name']}}<br>
+            <a class="btn"  href="{{url_for('chap',id=book['_id'])}}">Chapters</a>
+        </div>
+      </div>
+      {%endfor%}
+
+          </div>
+        </div>
+          </div>
+      </div>
