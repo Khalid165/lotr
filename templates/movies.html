@@ -3,7 +3,7 @@
     {%include 'header.html'%}
     <div class="movies-list" >
   {%for movie in all_movies[:4]%}
-    <div class="card text-bg-dark mb-3" style="max-width: 15rem;">
+    <div class="card text-bg-dark mb-3" style="width: 15rem;">
   <div class="card-header">{{movie['name']}}</div>
   <div class="card-body">
     <p class="card-min">🕒 {{movie['runtimeInMinutes']}} mins</p>

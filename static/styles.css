@@ -61,7 +61,6 @@
 .book-img{
   background-image: url("https://coolwallpapers.me/picsup/6044223-lord-of-the-rings-film-inscription-patterns-tree.jpg");
   height:100%;
-  width:100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -192,5 +191,7 @@ ol a:before {
 .card-header{
     font-family: 'Josefin Sans', sans-serif;
 }
+
+
 
 
