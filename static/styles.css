@@ -74,6 +74,7 @@
 .movies-img{
   background-image: url("https://images.alphacoders.com/124/1248167.jpg");
   height:auto;
+  padding-bottom:100px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
