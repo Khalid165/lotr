@@ -5,7 +5,7 @@
 
   <img class="chars-img" src="https://www.spieltimes.com/wp-content/uploads/2022/05/LOTR-All-Characters-FT-v2-1024x576.png" style="width:100%;height:100%;padding-top:20%;">
 <div class="container-fluid" style="width:25%;padding-top:20px;">
-    <form class="d-flex" role="search">
+    <form class="d-flex" role="search" method="post">
       <input class="form-control me-2" name="name" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
@@ -21,8 +21,27 @@
     </tr>
   </thead>
   <tbody>
+  {%if name%}
 
-  {%for char in chars%}
+    {%for chare in chars%}
+        {%if chare['name']==name%}
+  <tr>
+
+      <td style="color:#D36B00;">{{chare['name']}}</td>
+      <td style="color:#C84B31;" >{{chare['race']}}</td>
+      <td><a href="{{chare['wikiUrl']}}">Wiki Link</a></td>
+
+    </tr>
+
+
+        {%endif%}
+  {%endfor%}
+
+  {%else%}
+
+
+
+    {%for char in chars%}
     <tr>
       {%if char['wikiUrl']!="" or char['name']!='' or char['race']!=''%}
 
@@ -32,7 +51,10 @@
       {%endif%}
 
     </tr>
+
    {%endfor%}
+  {%endif%}
+
 
   </tbody>
 </table>

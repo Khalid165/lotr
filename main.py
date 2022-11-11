@@ -42,8 +42,14 @@ def movies():
 
 @app.route("/characters",methods=["POST","GET"])
 def chars():
-    response = requests.get(f"{endpoint}character", headers=headers)
-    all_chars = response.json()['docs']
+    if request.method=="POST":
+        name=request.form.get("name").title()
+        response = requests.get(f"{endpoint}character", headers=headers)
+        all_chars = response.json()['docs']
+        return render_template("chars.html",chars=all_chars,name=name)
+    else:
+        response = requests.get(f"{endpoint}character", headers=headers)
+        all_chars = response.json()['docs']
     return render_template("chars.html",chars=all_chars)
 
 
