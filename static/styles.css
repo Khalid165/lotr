@@ -60,7 +60,7 @@
 
 .book-img{
   background-image: url("https://coolwallpapers.me/picsup/6044223-lord-of-the-rings-film-inscription-patterns-tree.jpg");
-  width:auto;height:auto;padding-bottom:100px;
+  width:auto;height:100%;padding-bottom:100px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
