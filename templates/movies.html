@@ -26,7 +26,7 @@
       {%else%}
       <p class="card-text">🏆 {{movie['academyAwardWins']}} award</p>
       {%endif%}
-      <p>🍅 {{movie['rottenTomatoesScore']}}%</p>
+      <p>🍅 {{round(movie['rottenTomatoesScore'])}}%</p>
   </div>
 </div>
     {%endfor%}

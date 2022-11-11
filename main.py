@@ -6,8 +6,8 @@ from flask_bootstrap import Bootstrap
 endpoint="https://the-one-api.dev/v2/"
 headers = {"Authorization": "Bearer RNV2VpwQrlKV0DwNURjK"}
 
-books=requests.get(f"{endpoint}book")
-all_books=books.json()["docs"]
+books = requests.get(f"{endpoint}book")
+all_books = books.json()["docs"]
 
 
 
@@ -20,10 +20,12 @@ def home():
 
 @app.route("/books")
 def books():
+
     return render_template("books.html",books=all_books)
 
 @app.route("/chapters")
 def chap():
+
     id=request.args.get("id")
     chapters=requests.get(f"{endpoint}book/{id}/chapter")
     all_chapters=chapters.json()["docs"]
@@ -38,7 +40,7 @@ def movies():
     all_movies = respons.json()['docs']
     return render_template("movies.html",all_movies=all_movies)
 
-@app.route("/characters")
+@app.route("/characters",methods=["POST","GET"])
 def chars():
     response = requests.get(f"{endpoint}character", headers=headers)
     all_chars = response.json()['docs']
